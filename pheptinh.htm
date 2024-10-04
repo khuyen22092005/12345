@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<head>
+        <meta http-equiv="Content-Language" content="en-us">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>Java script</title>
+        <script>
+            function pheptinh(){
+                var a = parseFloat(document.getElementById("txtA").value);
+                var b = parseFloat(document.getElementById("txtB").value);
+                var c=document.getElementById("pt").value;
+                var kq;
+                if (c=="+"){
+                    kq= a + b ;
+                }
+                else if (c=="-"){
+                    kq=a-b;
+                }
+                else if (c=="x"){
+                    kq=a*b;
+                }
+                else {
+                    kq=a/b;
+                }
+                document.getElementById("kq").value=kq;
+            }
+        </script>
+        <style>
+            p{
+                color: rgb(32, 170, 170);
+            }
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f0f0f0;
+                display: flex;
+                justify-content: center; /* Căn giữa theo chiều ngang */
+                align-items: center;    /* Căn giữa theo chiều dọc */
+                height: 100vh;          /* Chiều cao toàn màn hình */
+                margin: 0;
+            }
+            .calculator {
+                background-color: #fff;
+                border: 2px solid #ccc;
+                border-radius: 10px;
+                padding: 20px;
+                box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+                width: 600px;
+            }
+            
+            .calculator input[type="number" ],
+            .calculator select[size=],
+            .calculator input[type="button"] {
+                width: 100%;
+                padding: 10px;
+                margin-bottom: 15px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                font-size: 1em;
+            }
+            .calculator input[type="button"] {
+                background-color: #28a745;
+                color: #fff;
+                border: none;
+                cursor: pointer;
+            }
+            .calculator input[type="button"]:hover {
+                background-color: #218838;
+            }
+        </style>
+</head>
+<body>
+    <div class="calculator">
+        <center><p>Thực hiện 4 phép tính cộng, trừ, nhân,chia</p></center><br>
+        <input type="number" id="txtA" placeholder="Nhập số thứ nhất" size="5">
+        <select size="1" id="pt">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="x">x</option>
+            <option value="/">÷</option>
+        </select>
+        <input type="number" id="txtB" placeholder="Nhập số thứ hai">
+        <input type="button" value=" = " onclick="pheptinh()" >
+        <input type="number" id="kq" size="15" placeholder="Kết quả">
+    </div>
+</body>
